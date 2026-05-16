@@ -5,33 +5,82 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta
       name="description"
-      content="Laajenna — Rakennamme verkkosivuja ja digitaalisia ratkaisuja suomalaisille yrityksille."
+      content="Laajenna — Laadukkaita verkkosivuja, web-sovelluksia ja digitaalisia ratkaisuja suomalaisille yrityksille. Next.js, React, Framer. SEO-optimoitu. Aloita ilmaisen konsultaation kanssa."
+    />
+    <meta
+      name="keywords"
+      content="verkkosivut, web-kehitys, digitaaliset ratkaisut, Next.js, React, Framer, SEO, brändäys, UI/UX, Helsinki"
     />
     <meta name="theme-color" content="#080C10" />
-    <title>Laajenna — Digitaalinen Kasvu</title>
+    <meta
+      name="robots"
+      content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1"
+    />
+    <meta name="author" content="Laajenna" />
+    <title>
+      Laajenna — Verkkosivut, Web-kehitys ja Digitaaliset Ratkaisut | Helsinki
+    </title>
 
     <link rel="canonical" href="https://laajenna.fi/" />
 
-    <!-- Open Graph -->
+    <!-- Preconnect to external resources for performance -->
+    <link rel="dns-prefetch" href="https://fonts.googleapis.com" />
+    <link rel="dns-prefetch" href="https://fonts.gstatic.com" />
+    <link rel="dns-prefetch" href="https://assets.calendly.com" />
+
+    <!-- Preload critical fonts -->
+    <link
+      rel="preload"
+      as="style"
+      href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,700;12..96,800&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,300&display=swap"
+    />
+
+    <!-- Apple touch icon for mobile home screen -->
+    <link
+      rel="apple-touch-icon"
+      href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23080C10'/%3E%3Cpath d='M20 16v32h24' stroke='%233B82F6' stroke-width='6' stroke-linecap='square' fill='none'/%3E%3C/svg%3E"
+    />
+
+    <!-- Additional SEO meta tags -->
+    <meta name="format-detection" content="telephone=no" />
+    <meta name="mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta
+      name="apple-mobile-web-app-status-bar-style"
+      content="black-translucent"
+    />
     <meta property="og:type" content="website" />
     <meta property="og:locale" content="fi_FI" />
     <meta property="og:site_name" content="Laajenna" />
-    <meta property="og:title" content="Laajenna — Digitaalinen Kasvu" />
+    <meta
+      property="og:title"
+      content="Laajenna — Verkkosivut, Web-kehitys ja Digitaaliset Ratkaisut"
+    />
     <meta
       property="og:description"
-      content="Rakennamme verkkosivuja ja digitaalisia ratkaisuja suomalaisille yrityksille, jotka haluavat kasvaa ja erottua verkossa."
+      content="Laadukkaat verkkosivut ja digitaaliset ratkaisut suomalaisille yrityksille. Erikoistumme Next.js-kehitykseen, SEO-optimointiin ja brändäykseen. Aloita ilmaisen konsultaation kanssa."
     />
     <meta property="og:url" content="https://laajenna.fi/" />
-    <meta property="og:image" content="https://laajenna.fi/og-image.png" />
+    <meta property="og:image" content="https://laajenna.fi/img/og-image.png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:type" content="image/png" />
 
     <!-- Twitter -->
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="Laajenna — Digitaalinen Kasvu" />
+    <meta
+      name="twitter:title"
+      content="Laajenna — Verkkosivut ja Web-kehitys | Helsinki"
+    />
     <meta
       name="twitter:description"
-      content="Verkkosivuja ja digitaalisia ratkaisuja suomalaisille yrityksille."
+      content="Laadukkaat verkkosivut, Next.js-sovellukset ja digitaaliset ratkaisut suomalaisille yrityksille."
     />
-    <meta name="twitter:image" content="https://laajenna.fi/og-image.png" />
+    <meta name="twitter:image" content="https://laajenna.fi/img/og-image.png" />
+    <meta
+      name="twitter:image:alt"
+      content="Laajenna — Digitaalisen kasvun kumppani"
+    />
 
     <!-- Favicon — inline SVG, electric blue L mark -->
     <link
@@ -52,22 +101,145 @@
     />
     <link rel="stylesheet" href="styles.css?v=2" />
 
-    <!-- JSON-LD: ProfessionalService schema -->
+    <!-- JSON-LD: Comprehensive structured data -->
     <script type="application/ld+json">
       {
         "@context": "https://schema.org",
-        "@type": "ProfessionalService",
-        "name": "Laajenna",
-        "description": "Verkkosivuja ja digitaalisia ratkaisuja suomalaisille yrityksille.",
-        "url": "https://laajenna.fi/",
-        "email": "hei@laajenna.fi",
-        "areaServed": "FI",
-        "address": {
-          "@type": "PostalAddress",
-          "addressLocality": "Helsinki",
-          "addressCountry": "FI"
-        },
-        "foundingDate": "2022"
+        "@graph": [
+          {
+            "@type": "Organization",
+            "@id": "https://laajenna.fi/#organization",
+            "name": "Laajenna",
+            "url": "https://laajenna.fi/",
+            "logo": "https://laajenna.fi/img/og-image.png",
+            "description": "Verkkosivuja ja digitaalisia ratkaisuja suomalaisille yrityksille",
+            "email": "hei@laajenna.fi",
+            "areaServed": "FI",
+            "address": {
+              "@type": "PostalAddress",
+              "addressLocality": "Helsinki",
+              "addressCountry": "FI"
+            },
+            "foundingDate": "2022",
+            "sameAs": [],
+            "contactPoint": {
+              "@type": "ContactPoint",
+              "contactType": "Customer Service",
+              "email": "hei@laajenna.fi",
+              "availableLanguage": "fi"
+            }
+          },
+          {
+            "@type": "LocalBusiness",
+            "@id": "https://laajenna.fi/#localbusiness",
+            "name": "Laajenna",
+            "image": "https://laajenna.fi/img/og-image.png",
+            "description": "Digitaalisen kasvun palvelut",
+            "url": "https://laajenna.fi/",
+            "telephone": "",
+            "email": "hei@laajenna.fi",
+            "address": {
+              "@type": "PostalAddress",
+              "addressLocality": "Helsinki",
+              "addressCountry": "FI"
+            },
+            "areaServed": "FI",
+            "serviceType": [
+              "Web Design",
+              "Web Development",
+              "SEO",
+              "Branding",
+              "UI/UX Design"
+            ]
+          },
+          {
+            "@type": "WebSite",
+            "@id": "https://laajenna.fi/#website",
+            "url": "https://laajenna.fi/",
+            "name": "Laajenna",
+            "description": "Digitaalisen kasvun kumppani",
+            "publisher": {
+              "@id": "https://laajenna.fi/#organization"
+            },
+            "potentialAction": {
+              "@type": "SearchAction",
+              "target": {
+                "@type": "EntryPoint",
+                "urlTemplate": "https://laajenna.fi/?s={search_term_string}"
+              },
+              "query-input": "required name=search_term_string"
+            }
+          },
+          {
+            "@type": "BreadcrumbList",
+            "@id": "https://laajenna.fi/#breadcrumb",
+            "itemListElement": [
+              {
+                "@type": "ListItem",
+                "position": 1,
+                "name": "Etusivu",
+                "item": "https://laajenna.fi/"
+              },
+              {
+                "@type": "ListItem",
+                "position": 2,
+                "name": "Palvelut",
+                "item": "https://laajenna.fi/#palvelut"
+              },
+              {
+                "@type": "ListItem",
+                "position": 3,
+                "name": "Projektit",
+                "item": "https://laajenna.fi/#projektit"
+              }
+            ]
+          },
+          {
+            "@type": "FAQPage",
+            "mainEntity": [
+              {
+                "@type": "Question",
+                "name": "Paljonko verkkosivuprojekti maksaa?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Pienemmät esittelysivut alkavat noin 1 000 € hintaluokasta. Laajemmat verkkokaupat ja räätälöidyt sovellukset 2 000–4 000 €. Annamme aina kiinteän tarjouksen ennen aloitusta."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "Kuinka kauan projekti kestää?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Tyypillinen verkkosivuprojekti kestää 4–8 viikkoa. Aikataulu sovitaan tarkasti aloituspalaverissa ja seurataan viikoittain."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "Käytättekö Framer vai koodaatte itse?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Kumpaakin — valinta tehdään projektin tarpeiden mukaan. Framer sopii nopeaan brändisivuun, Next.js / React vaativampiin verkkosovelluksiin."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "Saanko sivut omaan hallintaani?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Kyllä. Sivujen hallinta, domain ja kaikki sisältö ovat aina sinun nimissäsi. Et ole sidottu meihin julkaisun jälkeen."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "Tarjoatteko ylläpitoa julkaisun jälkeen?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Tarjoamme jatkuvaa ylläpitoa ja kehitystä kuukausisopimuksella. Voit myös tilata päivityksiä yksittäisinä toimeksiantoina."
+                }
+              }
+            ]
+          }
+        ]
       }
     </script>
   </head>
@@ -130,7 +302,6 @@
             />
             yrityksille, jotka haluavat kasvaa ja erottua verkossa.
             <br />
-            Saa ilmainen prototyyppi ilman sitoumuksia.
           </p>
 
           <div class="hero-actions">
@@ -198,6 +369,72 @@
 
           <!-- Editorial numbered list — far more distinctive than a card grid -->
           <div class="services-list">
+            <!-- Service schema for all services -->
+            <script type="application/ld+json">
+              {
+                "@context": "https://schema.org",
+                "@type": "ItemList",
+                "name": "Laajenna Palvelut",
+                "itemListElement": [
+                  {
+                    "@type": "ListItem",
+                    "position": 1,
+                    "item": {
+                      "@type": "Service",
+                      "name": "Web Design",
+                      "description": "Visuaalisesti vaikuttavia verkkosivuja, jotka erottuvat kilpailijoista ja jäävät mieleen. UI/UX-suunnittelu, wireframes ja Figma-prototypointi.",
+                      "provider": {
+                        "@type": "Organization",
+                        "name": "Laajenna"
+                      },
+                      "areaServed": "FI"
+                    }
+                  },
+                  {
+                    "@type": "ListItem",
+                    "position": 2,
+                    "item": {
+                      "@type": "Service",
+                      "name": "Kehitys",
+                      "description": "Nopeita, skaalautuvia verkkosovelluksia modernilla teknologialla. Next.js, React, Framer ja muut modernit kehitystyökalut.",
+                      "provider": {
+                        "@type": "Organization",
+                        "name": "Laajenna"
+                      },
+                      "areaServed": "FI"
+                    }
+                  },
+                  {
+                    "@type": "ListItem",
+                    "position": 3,
+                    "item": {
+                      "@type": "Service",
+                      "name": "SEO & Kasvu",
+                      "description": "Orgaaninen näkyvyys hakukoneissa ja konversio-optimointi. Analytics, SEO-optimointi ja konversion optimointi.",
+                      "provider": {
+                        "@type": "Organization",
+                        "name": "Laajenna"
+                      },
+                      "areaServed": "FI"
+                    }
+                  },
+                  {
+                    "@type": "ListItem",
+                    "position": 4,
+                    "item": {
+                      "@type": "Service",
+                      "name": "Brändäys",
+                      "description": "Yhtenäinen visuaalinen identiteetti — logo, värit, typografia — joka rakentaa luottamusta.",
+                      "provider": {
+                        "@type": "Organization",
+                        "name": "Laajenna"
+                      },
+                      "areaServed": "FI"
+                    }
+                  }
+                ]
+              }
+            </script>
             <div class="service-row reveal-up" data-delay="0">
               <span class="svc-num" aria-hidden="true">01</span>
               <div class="svc-name">
@@ -343,6 +580,58 @@
           </div>
 
           <div class="portfolio-grid">
+            <!-- Service schema for portfolio items -->
+            <script type="application/ld+json">
+              {
+                "@context": "https://schema.org",
+                "@type": "ItemList",
+                "itemListElement": [
+                  {
+                    "@type": "ListItem",
+                    "position": 1,
+                    "item": {
+                      "@type": "SoftwareApplication",
+                      "name": "WCAG Scan",
+                      "description": "Automaattinen WCAG 2.x -tarkistustyökalu verkkosivuille. SaaS-ratkaisu saavutettavuuden testaamiseen.",
+                      "url": "https://wcag-scan.com",
+                      "creator": {
+                        "@type": "Organization",
+                        "name": "Laajenna"
+                      },
+                      "applicationCategory": "BusinessApplication"
+                    }
+                  },
+                  {
+                    "@type": "ListItem",
+                    "position": 2,
+                    "item": {
+                      "@type": "LocalBusiness",
+                      "name": "Ravintola Latokaski",
+                      "description": "Ravintolan verkkosivut, brändäys ja tilausjärjestelmä",
+                      "url": "https://ravintolalatokaski.fi",
+                      "creator": {
+                        "@type": "Organization",
+                        "name": "Laajenna"
+                      }
+                    }
+                  },
+                  {
+                    "@type": "ListItem",
+                    "position": 3,
+                    "item": {
+                      "@type": "EducationalOccupationalCredential",
+                      "name": "Urapolku Oy",
+                      "description": "Löydä oma ura- tai opiskelupolku tekoälyn avulla",
+                      "url": "https://urapolku.fi",
+                      "creator": {
+                        "@type": "Organization",
+                        "name": "Laajenna"
+                      }
+                    }
+                  }
+                ]
+              }
+            </script>
             <!-- Large card: wcag-scan.com (featured) -->
             <div
               class="portfolio-card portfolio-large reveal-up"
@@ -352,7 +641,10 @@
                 <img
                   src="img/wcag-scan.png"
                   alt="WCAG Scan — saavutettavuusskannerin etusivu"
+                  title="WCAG Scan saavutettavuustyökalu etusivu"
                   loading="lazy"
+                  width="800"
+                  height="600"
                 />
               </div>
               <div class="portfolio-label-top">
@@ -383,7 +675,10 @@
                 <img
                   src="img/ravintola.webp"
                   alt="Ravintola Latokaski — ravintolan sisätila"
+                  title="Ravintola Latokaski verkkosivut ja hallintajärjestelmä"
                   loading="lazy"
+                  width="800"
+                  height="600"
                 />
               </div>
               <div class="portfolio-label-top">
@@ -414,7 +709,10 @@
                 <img
                   src="img/urapolku-2.png"
                   alt="Urapolku Oy — verkkosovelluksen etusivu"
+                  title="Urapolku verkkosovellus koulutus ja opetus"
                   loading="lazy"
+                  width="800"
+                  height="600"
                 />
               </div>
               <div class="portfolio-label-top">
