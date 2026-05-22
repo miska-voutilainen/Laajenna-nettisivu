@@ -416,12 +416,15 @@ em {
   font-size: 14px;
   font-weight: 600;
   letter-spacing: 0.01em;
+  border: none;
   transition:
     transform 0.28s var(--ease),
     box-shadow 0.28s var(--ease),
     background 0.2s,
     border-color 0.2s,
     color 0.2s;
+
+  cursor: pointer;
 }
 .btn-primary {
   background: #2563eb;
@@ -860,7 +863,6 @@ em {
     rgba(59, 130, 246, 0.04) 0%,
     transparent 60%
   );
-  cursor: default;
   transition:
     border-color 0.3s,
     background 0.3s;
@@ -1503,6 +1505,51 @@ em {
   color: #ef4444;
 }
 
+/* contact card */
+.contact-card {
+  max-width: 600px;
+  margin: 0 auto;
+  margin-top: 50px;
+  padding: 32px 20px;
+  border-style: solid !important;
+  font-family: var(--font-head);
+  text-align: left;
+  display: flex;
+  justify-content: space-around;
+}
+
+.contact-card-profile-info {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.contact-card-title {
+  font-size: 0.8rem;
+  color: var(--accent);
+}
+
+.contact-card-img img {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  object-fit: cover;
+  object-position: center;
+}
+
+.contact-card-details ul {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.contact-card-details ul li {
+  list-style: none;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
 @media (max-width: 600px) {
   .form-row {
     grid-template-columns: 1fr;
@@ -1510,6 +1557,19 @@ em {
   .form-footer {
     flex-direction: column;
     align-items: stretch;
+  }
+
+  .contact-card {
+    flex-direction: column;
+    text-align: center;
+    gap: 20px;
+    padding: 40px 0;
+    margin-top: 35px;
+  }
+
+  .contact-card-profile-info {
+    flex-direction: column;
+    gap: 12px;
   }
 }
 
