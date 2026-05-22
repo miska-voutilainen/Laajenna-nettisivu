@@ -288,6 +288,58 @@ const reducedMotion = window.matchMedia(
 })();
 
 /* ================================================================
+   CALENDLY — lazy-load inline widget only when needed
+================================================================ */
+(function initCalendlyWidget() {
+  const widget = document.getElementById("calendlyWidget");
+  if (!widget || widget.dataset.loaded === "true") return;
+
+  const scriptSrc = "https://assets.calendly.com/assets/external/widget.js";
+
+  function loadWidget() {
+    if (widget.dataset.loaded === "true") return;
+    widget.dataset.loaded = "true";
+
+    const script = document.createElement("script");
+    script.src = scriptSrc;
+    script.async = true;
+    script.onload = () => {
+      if (
+        !window.Calendly ||
+        typeof window.Calendly.initInlineWidget !== "function"
+      )
+        return;
+
+      widget.innerHTML = "";
+      window.Calendly.initInlineWidget({
+        url: widget.dataset.url,
+        parentElement: widget,
+      });
+    };
+    document.body.appendChild(script);
+  }
+
+  if (!("IntersectionObserver" in window)) {
+    loadWidget();
+    return;
+  }
+
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          observer.disconnect();
+          loadWidget();
+        }
+      });
+    },
+    { rootMargin: "250px 0px" },
+  );
+
+  observer.observe(widget);
+})();
+
+/* ================================================================
    HAMBURGER MENU
 ================================================================ */
 (function initHamburger() {
