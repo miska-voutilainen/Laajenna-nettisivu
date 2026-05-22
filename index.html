@@ -98,7 +98,16 @@
     <link
       href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,700;12..96,800&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,300&display=swap"
       rel="stylesheet"
+      media="print"
+      onload="this.media = 'all'"
+      crossorigin="anonymous"
     />
+    <noscript>
+      <link
+        rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,700;12..96,800&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,300&display=swap"
+      />
+    </noscript>
     <link rel="stylesheet" href="styles.css?v=2" />
 
     <!-- JSON-LD: Comprehensive structured data -->
@@ -643,6 +652,7 @@
                   alt="WCAG Scan — saavutettavuusskannerin etusivu"
                   title="WCAG Scan saavutettavuustyökalu etusivu"
                   loading="lazy"
+                  decoding="async"
                   width="800"
                   height="600"
                 />
@@ -677,6 +687,7 @@
                   alt="Ravintola Latokaski — ravintolan sisätila"
                   title="Ravintola Latokaski verkkosivut ja hallintajärjestelmä"
                   loading="lazy"
+                  decoding="async"
                   width="800"
                   height="600"
                 />
@@ -711,6 +722,7 @@
                   alt="Urapolku Oy — verkkosovelluksen etusivu"
                   title="Urapolku verkkosovellus koulutus ja opetus"
                   loading="lazy"
+                  decoding="async"
                   width="800"
                   height="600"
                 />
@@ -1104,7 +1116,14 @@
           >
             <div class="contact-card-profile-info">
               <div class="contact-card-img">
-                <img src="/img/Adem.png" alt="Adem Ottoman" />
+                <img
+                  src="/img/Adem.png"
+                  alt="Adem Ottoman"
+                  loading="lazy"
+                  decoding="async"
+                  width="1769"
+                  height="1769"
+                />
               </div>
               <div>
                 <h2>Adem Ottoman</h2>
@@ -1130,20 +1149,17 @@
             <br />
 
             <h3 class="section-title book-time-title">Tai varaa tapaaminen</h3>
-            <!-- Calendly inline widget begin -->
             <div
+              id="calendlyWidget"
               class="calendly-inline-widget"
               data-url="https://calendly.com/hei-laajenna/30min"
               style="min-width: 320px; height: 100vh"
-            ></div>
-            <script
-              type="text/javascript"
-              src="https://assets.calendly.com/assets/external/widget.js"
-              async
-            ></script>
+            >
+              <p class="calendly-placeholder">
+                Avaa varauskalenteri tarvittaessa.
+              </p>
+            </div>
           </div>
-
-          <!-- Calendly inline widget end -->
 
           <!-- Calendly badge widget begin -->
           <!-- <link

@@ -63,12 +63,7 @@ html {
   scroll-behavior: smooth;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  opacity: 0;
-  transition: opacity 0.5s ease;
   overflow-x: hidden;
-}
-html.ready {
-  opacity: 1;
 }
 
 body {
