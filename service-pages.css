@@ -356,6 +356,33 @@ a.service-row {
 .svc-project-link-row a:hover { gap: 12px; }
 
 /* ── Bottom CTA strip ───────────────────────────────────────── */
+/* ── Technology grid ────────────────────────────────────────── */
+.svc-tech-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 20px;
+}
+
+.svc-tech-pill {
+  display: inline-flex;
+  align-items: center;
+  padding: 6px 14px;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  font-size: 13px;
+  color: var(--text-muted);
+  background: var(--bg-card);
+  white-space: nowrap;
+  transition: border-color 0.2s, color 0.2s, background 0.2s;
+}
+.svc-tech-pill:hover {
+  border-color: rgba(59, 130, 246, 0.3);
+  color: var(--text);
+  background: rgba(59, 130, 246, 0.05);
+}
+
+/* ── Bottom CTA strip ───────────────────────────────────────── */
 .svc-cta-strip {
   padding-block: 88px;
   border-top: 1px solid var(--border);

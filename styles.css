@@ -2002,14 +2002,23 @@ em {
 
   /* Services */
   .service-row {
-    grid-template-columns: 48px 1fr;
-    gap: 16px;
+    grid-template-columns: 48px 1fr 36px;
+    gap: 14px;
   }
   .svc-num {
     font-size: clamp(16px, 4.5vw, 20px);
   }
   .svc-icon {
-    display: none;
+    display: flex;
+    position: static;
+    transform: none;
+    width: 32px;
+    height: 32px;
+    opacity: 0.65;
+    align-self: center;
+  }
+  .service-row:hover .svc-icon {
+    transform: translateX(3px);
   }
   .svc-name {
     padding-right: 0;
@@ -2029,6 +2038,18 @@ em {
   .portfolio-info {
     transform: translateY(0);
   }
+
+  /* Portfolio detail panel — allow scroll on small cards */
+  .portfolio-detail-panel {
+    overflow-y: auto;
+    justify-content: flex-start;
+    gap: 10px;
+    scrollbar-width: none;
+  }
+  .portfolio-detail-panel::-webkit-scrollbar { display: none; }
+  .pdp-title { font-size: clamp(17px, 5vw, 22px); }
+  .pdp-desc { margin-bottom: 8px; font-size: 12px; }
+  .pdp-services { gap: 3px; margin-bottom: 8px; }
 
   /* About */
   .about-cols {
