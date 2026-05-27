@@ -647,7 +647,7 @@ em {
   border-bottom: 1px solid var(--border);
   position: relative;
   overflow: hidden;
-  cursor: default;
+  cursor: pointer;
   transition: background 0.3s;
 }
 
@@ -849,6 +849,169 @@ em {
   border: 1px solid var(--border);
 }
 
+/* ── Portfolio detail panel ──────────────────────────────── */
+.portfolio-detail-btn {
+  position: absolute;
+  bottom: clamp(14px, 2vw, 20px);
+  right: clamp(14px, 2vw, 20px);
+  z-index: 4;
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  border: 1px solid rgba(255, 255, 255, 0.22);
+  background: rgba(8, 12, 16, 0.68);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  color: rgba(255, 255, 255, 0.8);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition:
+    border-color 0.2s,
+    background 0.2s,
+    color 0.2s;
+}
+.portfolio-detail-btn:hover {
+  border-color: var(--accent);
+  background: rgba(59, 130, 246, 0.15);
+  color: var(--accent);
+}
+.portfolio-card.detail-open .portfolio-detail-btn {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.portfolio-detail-panel {
+  position: absolute;
+  inset: 0;
+  z-index: 3;
+  background: rgba(8, 12, 16, 0.97);
+  transform: translateY(100%);
+  transition: transform 0.44s var(--ease);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: clamp(16px, 2.5vw, 28px);
+  overflow: hidden;
+}
+.portfolio-card.detail-open .portfolio-detail-panel {
+  transform: translateY(0);
+}
+.portfolio-card.detail-open {
+  transform: none !important;
+  transition: none !important;
+}
+
+.pdp-topbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.pdp-close {
+  background: transparent;
+  border: 1px solid var(--border);
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  color: var(--text-muted);
+  flex-shrink: 0;
+  transition: border-color 0.2s, color 0.2s;
+}
+.pdp-close:hover {
+  border-color: rgba(255, 255, 255, 0.4);
+  color: var(--text);
+}
+
+.pdp-main {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: clamp(16px, 3vw, 48px);
+  align-items: end;
+}
+@media (max-width: 540px) {
+  .pdp-main { grid-template-columns: 1fr; gap: 14px; }
+}
+
+.pdp-title {
+  font-family: var(--font-head);
+  font-size: clamp(24px, 4vw, 52px);
+  font-weight: 800;
+  letter-spacing: -0.04em;
+  line-height: 0.96;
+  margin-bottom: clamp(8px, 1.2vw, 14px);
+  color: var(--text);
+}
+.pdp-desc {
+  font-size: clamp(12px, 1.1vw, 14px);
+  color: var(--text-muted);
+  line-height: 1.65;
+  margin-bottom: clamp(12px, 1.5vw, 20px);
+  max-width: 50ch;
+}
+.pdp-services {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  margin-bottom: clamp(14px, 1.8vw, 20px);
+}
+.pdp-services li {
+  font-size: clamp(12px, 1.1vw, 13px);
+  color: var(--text-muted);
+  display: flex;
+  gap: 9px;
+  align-items: flex-start;
+  line-height: 1.4;
+}
+.pdp-services li::before {
+  content: "—";
+  color: var(--accent);
+  font-size: 11px;
+  flex-shrink: 0;
+  margin-top: 1px;
+}
+
+.pdp-ext-link {
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--accent);
+  letter-spacing: 0.04em;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  transition: gap 0.2s var(--ease);
+}
+.pdp-ext-link:hover { gap: 9px; }
+
+.pdp-meta {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 12px;
+}
+@media (max-width: 540px) {
+  .pdp-meta { align-items: flex-start; flex-direction: row; flex-wrap: wrap; }
+}
+
+.pdp-year {
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  color: var(--text-muted);
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid var(--border);
+  padding: 4px 10px;
+  border-radius: 6px;
+}
+
 /* "Seuraava projekti" card — full-width banner */
 .portfolio-next {
   display: flex;
@@ -1030,16 +1193,18 @@ em {
   align-items: center;
   justify-content: center;
   color: var(--accent);
-  opacity: 0.45;
+  opacity: 0.7;
   pointer-events: none;
   flex-shrink: 0;
   transition:
     opacity 0.3s var(--ease),
-    background 0.3s var(--ease);
+    background 0.3s var(--ease),
+    transform 0.35s var(--ease);
 }
 .service-row:hover .svc-icon {
   opacity: 1;
-  background: rgba(59, 130, 246, 0.15);
+  background: rgba(59, 130, 246, 0.18);
+  transform: translateY(-50%) translateX(4px);
 }
 .svc-icon svg {
   width: 20px;

@@ -1,0 +1,382 @@
+/* ================================================================
+   LAAJENNA — Service Detail Pages
+   Extends styles.css — must be loaded after it
+   ================================================================ */
+
+/* ── Service row as link ────────────────────────────────────── */
+a.service-row {
+  display: grid;
+  text-decoration: none;
+  color: inherit;
+  cursor: pointer;
+}
+
+/* ── Back navigation ────────────────────────────────────────── */
+.svc-back {
+  padding-top: calc(var(--nav-h) + 32px);
+}
+
+.svc-back-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--text-muted);
+  font-size: 13px;
+  letter-spacing: 0.04em;
+  transition: color 0.2s;
+}
+.svc-back-link:hover { color: var(--text); }
+.svc-back-link .back-arrow { transition: transform 0.2s var(--ease); }
+.svc-back-link:hover .back-arrow { transform: translateX(-3px); }
+
+/* ── Hero ───────────────────────────────────────────────────── */
+.svc-hero {
+  padding-top: 48px;
+  padding-bottom: 100px;
+  position: relative;
+  overflow: hidden;
+}
+
+.svc-hero-num {
+  display: inline-block;
+  font-size: 11px;
+  font-family: var(--font-head);
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 24px;
+  background: var(--accent-glow);
+  border: 1px solid var(--accent-dim);
+  border-radius: 100px;
+  padding: 4px 14px;
+}
+
+.svc-hero-title {
+  font-family: var(--font-head);
+  font-size: clamp(52px, 8vw, 108px);
+  font-weight: 800;
+  line-height: 0.94;
+  letter-spacing: -0.035em;
+  margin-bottom: 28px;
+  max-width: 800px;
+}
+
+.svc-hero-sub {
+  font-size: clamp(16px, 1.8vw, 19px);
+  color: var(--text-muted);
+  max-width: 500px;
+  line-height: 1.65;
+  margin-bottom: 36px;
+}
+
+.svc-hero-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.svc-hero-tag {
+  display: inline-flex;
+  align-items: center;
+  padding: 5px 14px;
+  border: 1px solid var(--border);
+  border-radius: 100px;
+  font-size: 12px;
+  letter-spacing: 0.04em;
+  color: var(--text-muted);
+  background: var(--bg-card);
+}
+
+/* ── Content sections ───────────────────────────────────────── */
+.svc-section {
+  padding-block: 80px;
+  border-top: 1px solid var(--border);
+}
+
+.svc-two-col {
+  display: grid;
+  grid-template-columns: 200px 1fr;
+  gap: 64px;
+  align-items: start;
+}
+
+@media (max-width: 680px) {
+  .svc-two-col { grid-template-columns: 1fr; gap: 28px; }
+}
+
+.svc-col-label {
+  font-family: var(--font-head);
+  font-size: 12px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  padding-top: 6px;
+  position: sticky;
+  top: calc(var(--nav-h) + 28px);
+}
+
+.svc-col-body h3 {
+  font-family: var(--font-head);
+  font-size: clamp(22px, 3vw, 30px);
+  font-weight: 700;
+  line-height: 1.2;
+  margin-bottom: 18px;
+}
+
+.svc-col-body p {
+  color: var(--text-muted);
+  line-height: 1.72;
+  margin-bottom: 16px;
+}
+.svc-col-body p:last-child { margin-bottom: 0; }
+
+/* ── Benefits list ──────────────────────────────────────────── */
+.svc-benefits {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.svc-benefit {
+  display: flex;
+  gap: 18px;
+  align-items: flex-start;
+}
+
+.svc-benefit-icon {
+  flex-shrink: 0;
+  width: 36px;
+  height: 36px;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--accent);
+  background: var(--bg-card);
+}
+
+.svc-benefit-text strong {
+  display: block;
+  font-weight: 600;
+  font-size: 15px;
+  margin-bottom: 4px;
+  color: var(--text);
+}
+.svc-benefit-text span {
+  font-size: 14px;
+  color: var(--text-muted);
+  line-height: 1.6;
+}
+
+/* ── Projects section ───────────────────────────────────────── */
+.svc-projects-section {
+  padding-block: 80px;
+  border-top: 1px solid var(--border);
+}
+
+.svc-projects-header {
+  margin-bottom: 40px;
+}
+
+/* ── Project accordion list ─────────────────────────────────── */
+.svc-project-list {
+  display: flex;
+  flex-direction: column;
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  overflow: hidden;
+}
+
+.svc-project-item {
+  border-bottom: 1px solid var(--border);
+}
+.svc-project-item:last-child { border-bottom: none; }
+
+.svc-project-top {
+  width: 100%;
+  background: transparent;
+  border: none;
+  color: inherit;
+  font-family: inherit;
+  display: grid;
+  grid-template-columns: 80px 1fr auto;
+  gap: 24px;
+  align-items: center;
+  padding: 24px 28px;
+  cursor: pointer;
+  text-align: left;
+  transition: background 0.2s;
+}
+.svc-project-top:hover { background: rgba(255,255,255,0.018); }
+
+@media (max-width: 600px) {
+  .svc-project-top { grid-template-columns: 56px 1fr auto; gap: 14px; padding: 18px 20px; }
+}
+
+.svc-project-thumb {
+  width: 80px;
+  height: 54px;
+  border-radius: 8px;
+  overflow: hidden;
+  border: 1px solid var(--border);
+  flex-shrink: 0;
+}
+.svc-project-thumb img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+@media (max-width: 600px) {
+  .svc-project-thumb { width: 56px; height: 40px; }
+}
+
+.svc-project-meta h3 {
+  font-family: var(--font-head);
+  font-size: 17px;
+  font-weight: 700;
+  margin-bottom: 4px;
+  color: var(--text);
+}
+
+.svc-project-meta p {
+  font-size: 12px;
+  color: var(--text-muted);
+  letter-spacing: 0.02em;
+}
+
+.svc-project-toggle {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 8px;
+}
+
+.svc-phase-label {
+  font-size: 10px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+}
+
+@media (max-width: 440px) { .svc-phase-label { display: none; } }
+
+.svc-dropdown-arrow {
+  width: 28px;
+  height: 28px;
+  border: 1px solid var(--border);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--text-muted);
+  transition: transform 0.32s var(--ease), border-color 0.2s, color 0.2s;
+}
+
+.svc-project-item.open .svc-dropdown-arrow {
+  transform: rotate(180deg);
+  border-color: var(--accent);
+  color: var(--accent);
+}
+
+/* Grid-row-trick for smooth open/close */
+.svc-project-body {
+  display: grid;
+  grid-template-rows: 0fr;
+  transition: grid-template-rows 0.38s var(--ease);
+}
+.svc-project-item.open .svc-project-body { grid-template-rows: 1fr; }
+
+.svc-project-body-inner { overflow: hidden; }
+
+.svc-project-detail-content {
+  padding: 8px 28px 24px 132px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 32px;
+}
+
+@media (max-width: 720px) {
+  .svc-project-detail-content { padding: 8px 20px 20px; grid-template-columns: 1fr; gap: 18px; }
+}
+
+.svc-detail-block h4 {
+  font-size: 11px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 12px;
+  font-family: var(--font-head);
+}
+
+.svc-detail-block ul {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.svc-detail-block li {
+  font-size: 14px;
+  color: var(--text-muted);
+  display: flex;
+  gap: 10px;
+  align-items: flex-start;
+  line-height: 1.45;
+}
+
+.svc-detail-block li::before {
+  content: "—";
+  color: var(--accent);
+  flex-shrink: 0;
+  font-size: 12px;
+}
+
+.svc-project-link-row {
+  margin: 0 28px 24px 132px;
+  padding-top: 16px;
+  border-top: 1px solid var(--border);
+}
+
+@media (max-width: 720px) {
+  .svc-project-link-row { margin: 0 20px 20px; }
+}
+
+.svc-project-link-row a {
+  font-size: 14px;
+  color: var(--accent);
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  transition: gap 0.2s var(--ease);
+}
+.svc-project-link-row a:hover { gap: 12px; }
+
+/* ── Bottom CTA strip ───────────────────────────────────────── */
+.svc-cta-strip {
+  padding-block: 88px;
+  border-top: 1px solid var(--border);
+}
+
+.svc-cta-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 32px;
+}
+
+@media (max-width: 600px) {
+  .svc-cta-inner { flex-direction: column; align-items: flex-start; }
+}
+
+.svc-cta-inner h2 {
+  font-family: var(--font-head);
+  font-size: clamp(24px, 3.5vw, 38px);
+  font-weight: 800;
+  letter-spacing: -0.025em;
+  max-width: 420px;
+  line-height: 1.12;
+}

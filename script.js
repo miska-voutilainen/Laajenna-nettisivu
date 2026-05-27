@@ -535,6 +535,55 @@ const reducedMotion = window.matchMedia(
 })();
 
 /* ================================================================
+   PORTFOLIO DETAIL PANEL
+================================================================ */
+(function initPortfolioDetail() {
+  const cards = document.querySelectorAll(
+    ".portfolio-card:not(.portfolio-next)",
+  );
+
+  cards.forEach((card) => {
+    const openBtn = card.querySelector(".portfolio-detail-btn");
+    const closeBtn = card.querySelector(".pdp-close");
+    const panel = card.querySelector(".portfolio-detail-panel");
+    if (!openBtn || !closeBtn || !panel) return;
+
+    function openPanel() {
+      card.style.transform = "";
+      card.classList.add("detail-open");
+      openBtn.setAttribute("aria-expanded", "true");
+      panel.setAttribute("aria-hidden", "false");
+    }
+
+    function closePanel() {
+      card.classList.remove("detail-open");
+      openBtn.setAttribute("aria-expanded", "false");
+      panel.setAttribute("aria-hidden", "true");
+    }
+
+    openBtn.addEventListener("click", openPanel);
+    closeBtn.addEventListener("click", (e) => {
+      e.stopPropagation();
+      closePanel();
+    });
+  });
+
+  document.addEventListener("keydown", (e) => {
+    if (e.key === "Escape") {
+      cards.forEach((card) => {
+        if (card.classList.contains("detail-open")) {
+          card.classList.remove("detail-open");
+          const ob = card.querySelector(".portfolio-detail-btn");
+          const p = card.querySelector(".portfolio-detail-panel");
+          if (ob) ob.setAttribute("aria-expanded", "false");
+          if (p) p.setAttribute("aria-hidden", "true");
+        }
+      });
+    }
+  });
+})();
+
+/* ================================================================
    SCROLL PROGRESS BAR
 ================================================================ */
 (function initScrollProgress() {
@@ -634,6 +683,7 @@ const reducedMotion = window.matchMedia(
     .querySelectorAll(".portfolio-card:not(.portfolio-next)")
     .forEach((card) => {
       card.addEventListener("mousemove", (e) => {
+        if (card.classList.contains("detail-open")) return;
         const rect = card.getBoundingClientRect();
         const x = (e.clientX - rect.left) / rect.width - 0.5;
         const y = (e.clientY - rect.top) / rect.height - 0.5;
