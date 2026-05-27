@@ -3,13 +3,17 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta
+    <!-- <meta
       name="description"
       content="Laajenna — Laadukkaita verkkosivuja, web-sovelluksia ja digitaalisia ratkaisuja suomalaisille yrityksille. Next.js, React, Framer. SEO-optimoitu. Aloita ilmaisen konsultaation kanssa."
+    /> -->
+    <meta
+      name="description"
+      content="Laajenna — kotisivut yrityksille ja nettisivut yrityksille. Edulliset kotisivut ja henkilöbrändi sivut suomalaisille yrityksille ja henkilöille."
     />
     <meta
       name="keywords"
-      content="verkkosivut, web-kehitys, digitaaliset ratkaisut, Next.js, React, Framer, SEO, brändäys, UI/UX, Helsinki"
+      content="Kotisivut yrityksille, Nettisivut yrityksille, Nettisivutyrityksille, Edulliset kotisivut yrityksille, kotisivut henkilöille, henkilöbrändi sivut, verkkosivut, web-kehitys, SEO, brändäys, UI/UX, Helsinki"
     />
     <meta name="theme-color" content="#080C10" />
     <meta
@@ -18,7 +22,7 @@
     />
     <meta name="author" content="Laajenna" />
     <title>
-      Laajenna — Verkkosivut, Web-kehitys ja Digitaaliset Ratkaisut | Helsinki
+      Laajenna — Nettisivut, Web-kehitys ja Digitaaliset Ratkaisut | Helsinki
     </title>
 
     <link rel="canonical" href="https://laajenna.fi/" />
@@ -58,7 +62,7 @@
     />
     <meta
       property="og:description"
-      content="Laadukkaat verkkosivut ja digitaaliset ratkaisut suomalaisille yrityksille. Erikoistumme Next.js-kehitykseen, SEO-optimointiin ja brändäykseen. Aloita ilmaisen konsultaation kanssa."
+      content="Laajenna — kotisivut yrityksille, nettisivut yrityksille ja henkilöbrändi sivut. Edulliset kotisivut yrityksille ja kotisivut henkilöille. Ota yhteyttä aloittaaksesi projektin."
     />
     <meta property="og:url" content="https://laajenna.fi/" />
     <meta property="og:image" content="https://laajenna.fi/img/og-image.png" />
@@ -74,7 +78,7 @@
     />
     <meta
       name="twitter:description"
-      content="Laadukkaat verkkosivut, Next.js-sovellukset ja digitaaliset ratkaisut suomalaisille yrityksille."
+      content="Laajenna — kotisivut yrityksille, nettisivut yrityksille, edulliset kotisivut yrityksille ja henkilöbrändi sivut suomalaisille yrityksille."
     />
     <meta name="twitter:image" content="https://laajenna.fi/img/og-image.png" />
     <meta
@@ -98,7 +102,16 @@
     <link
       href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,700;12..96,800&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,300&display=swap"
       rel="stylesheet"
+      media="print"
+      onload="this.media = 'all'"
+      crossorigin="anonymous"
     />
+    <noscript>
+      <link
+        rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,700;12..96,800&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,300&display=swap"
+      />
+    </noscript>
     <link rel="stylesheet" href="styles.css?v=2" />
 
     <!-- JSON-LD: Comprehensive structured data -->
@@ -112,7 +125,7 @@
             "name": "Laajenna",
             "url": "https://laajenna.fi/",
             "logo": "https://laajenna.fi/img/og-image.png",
-            "description": "Verkkosivuja ja digitaalisia ratkaisuja suomalaisille yrityksille",
+            "description": "Kotisivut yrityksille, nettisivut yrityksille, kotisivut henkilöille ja henkilöbrändi sivut — digitaalisia ratkaisuja suomalaisille yrityksille",
             "email": "hei@laajenna.fi",
             "areaServed": "FI",
             "address": {
@@ -157,7 +170,7 @@
             "@id": "https://laajenna.fi/#website",
             "url": "https://laajenna.fi/",
             "name": "Laajenna",
-            "description": "Digitaalisen kasvun kumppani",
+            "description": "Laajenna — kotisivut yrityksille, nettisivut yrityksille ja henkilöbrändi sivut. Edulliset kotisivut yrityksille ja kotisivut henkilöille.",
             "publisher": {
               "@id": "https://laajenna.fi/#organization"
             },
@@ -244,7 +257,7 @@
     </script>
   </head>
   <body>
-    <a href="#main-content" class="skip-link">Siirry pääsisältöön</a>
+    <!-- <a href="#main-content" class="skip-link">Siirry pääsisältöön</a> -->
 
     <!-- ── Scroll Progress Bar ───────────────────────────── -->
     <div class="scroll-progress" id="scrollProgress" aria-hidden="true"></div>
@@ -584,7 +597,15 @@
             <!-- Card: wcag-scan.com -->
             <div class="portfolio-card portfolio-large reveal-up" data-delay="0">
               <div class="portfolio-img">
-                <img src="img/wcag-scan.png" alt="WCAG Scan — saavutettavuusskannerin etusivu" title="WCAG Scan saavutettavuustyökalu etusivu" loading="lazy" width="800" height="600" />
+                <img
+                  src="img/wcag-scan.png"
+                  alt="WCAG Scan — saavutettavuusskannerin etusivu"
+                  title="WCAG Scan saavutettavuustyökalu etusivu"
+                  loading="lazy"
+                  decoding="async"
+                  width="800"
+                  height="600"
+                />
               </div>
               <div class="portfolio-label-top">
                 <span class="portfolio-cat">SaaS &amp; Saavutettavuustyökalu</span>
@@ -630,7 +651,15 @@
             <!-- Card: Ravintola Latokaski -->
             <div class="portfolio-card portfolio-large reveal-up" data-delay="1">
               <div class="portfolio-img">
-                <img src="img/ravintola.webp" alt="Ravintola Latokaski — ravintolan sisätila" title="Ravintola Latokaski verkkosivut ja hallintajärjestelmä" loading="lazy" width="800" height="600" />
+                <img
+                  src="img/ravintola.webp"
+                  alt="Ravintola Latokaski — ravintolan sisätila"
+                  title="Ravintola Latokaski verkkosivut ja hallintajärjestelmä"
+                  loading="lazy"
+                  decoding="async"
+                  width="800"
+                  height="600"
+                />
               </div>
               <div class="portfolio-label-top">
                 <span class="portfolio-cat">Ravintola &amp; Hallintajärjestelmä</span>
@@ -676,7 +705,15 @@
             <!-- Card: Urapolku -->
             <div class="portfolio-card portfolio-large reveal-up" data-delay="2">
               <div class="portfolio-img">
-                <img src="img/urapolku-2.png" alt="Urapolku Oy — verkkosovelluksen etusivu" title="Urapolku verkkosovellus koulutus ja opetus" loading="lazy" width="800" height="600" />
+                <img
+                  src="img/urapolku-2.png"
+                  alt="Urapolku Oy — verkkosovelluksen etusivu"
+                  title="Urapolku verkkosovellus koulutus ja opetus"
+                  loading="lazy"
+                  decoding="async"
+                  width="800"
+                  height="600"
+                />
               </div>
               <div class="portfolio-label-top">
                 <span class="portfolio-cat">Koulutus &amp; Opetus</span>
@@ -1081,25 +1118,57 @@
             </form>
           </div>
 
-          <div id="varaa-tapaaminen">
+          <!-- TODO: contact card -->
+          <div
+            class="portfolio-card portfolio-next reveal-up contact-card"
+            data-delay="3"
+          >
+            <div class="contact-card-profile-info">
+              <div class="contact-card-img">
+                <img
+                  src="/img/Adem.png"
+                  alt="Adem Ottoman"
+                  loading="lazy"
+                  decoding="async"
+                  width="1769"
+                  height="1769"
+                />
+              </div>
+              <div>
+                <h2>Adem Ottoman</h2>
+                <p class="contact-card-title">CO-FOUNDER, CEO</p>
+              </div>
+            </div>
+            <div class="contact-card-details">
+              <ul>
+                <li>
+                  <img src="/img/phone-icon.svg" alt="Puhelin" />
+                  <a href="tel:+358458525020">+358 45 852 5020</a>
+                </li>
+                <li>
+                  <img src="/img/mail-icon.svg" alt="Sähköposti" />
+                  <a href="mailto:adem@laajenna.fi">adem@laajenna.fi</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          <div>
             <br />
             <br />
 
             <h3 class="section-title book-time-title">Tai varaa tapaaminen</h3>
-            <!-- Calendly inline widget begin -->
             <div
+              id="calendlyWidget"
               class="calendly-inline-widget"
               data-url="https://calendly.com/hei-laajenna/30min"
               style="min-width: 320px; height: 100vh"
-            ></div>
-            <script
-              type="text/javascript"
-              src="https://assets.calendly.com/assets/external/widget.js"
-              async
-            ></script>
+            >
+              <p class="calendly-placeholder">
+                Avaa varauskalenteri tarvittaessa.
+              </p>
+            </div>
           </div>
-
-          <!-- Calendly inline widget end -->
 
           <!-- Calendly badge widget begin -->
           <!-- <link
